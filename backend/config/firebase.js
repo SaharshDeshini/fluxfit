@@ -1,5 +1,7 @@
 const admin = require("firebase-admin");
-
+console.log("PROJECT:", process.env.FIREBASE_PROJECT_ID);
+console.log("EMAIL:", process.env.FIREBASE_CLIENT_EMAIL);
+console.log("PRIVATE KEY EXISTS:", !!process.env.FIREBASE_PRIVATE_KEY);
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID,

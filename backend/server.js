@@ -30,6 +30,14 @@ app.use("/api/workout", workoutRoutes);
 const dietRoutes = require("./routes/dietRoutes");
 app.use("/api/diet", dietRoutes);
 
+// Character routes
+const characterRoutes = require("./routes/characterRoutes");
+app.use("/api/character", characterRoutes);
+
+// Wellness routes
+const wellnessRoutes = require("./routes/wellnessRoutes");
+app.use("/api/wellness", wellnessRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
 

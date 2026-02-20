@@ -19,10 +19,12 @@ const verifyToken = async (req, res, next) => {
     req.user = decodedToken;
 
     next(); // move to next function
-  } catch (error) {
-    console.error("VERIFY ERROR:", error);
-    return res.status(401).json({ message: "Invalid or expired token" });
-  }
+   } catch (error) {
+  console.error("VERIFY ERROR FULL:", error);
+  return res.status(401).json({
+    message: error.message
+  });
+}
 };
 
 module.exports = verifyToken;

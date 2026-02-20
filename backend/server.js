@@ -56,8 +56,11 @@ app.use("/api/community", communityRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "Something went wrong" });
+  console.error("GLOBAL ERROR:", err);
+  res.status(500).json({
+    error: err.message,
+    stack: err.stack
+  });
 });
 
 app.listen(PORT, () => {

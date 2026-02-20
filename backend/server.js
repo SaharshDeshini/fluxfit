@@ -6,6 +6,16 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
+const rateLimit = require("express-rate-limit");
+
+const aiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20
+});
+
+app.use("/api/character", aiLimiter);
+app.use("/api/diet/query", aiLimiter);
+
 // Middlewares
 app.use(cors());
 app.use(express.json());
@@ -45,8 +55,10 @@ app.use("/api/community", communityRoutes);
 // Start server
 const PORT = process.env.PORT || 5000;
 
-// const aiRoutes = require("./routes/aiRoutes");
-// app.use("/api/ai", aiRoutes);
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Something went wrong" });
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

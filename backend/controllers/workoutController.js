@@ -21,6 +21,15 @@ exports.dailyCheckin = async (req, res) => {
       return res.status(400).json({ error: "All fields required" });
     }
 
+    const userRef = db.collection("users").doc(uid);
+    const userSnap = await userRef.get();
+
+    if (!userSnap.exists) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    const userData = userSnap.data();
+
     const recoveryIndex = calculateRecoveryIndex({
       sleep,
       stress,
@@ -28,14 +37,19 @@ exports.dailyCheckin = async (req, res) => {
       energy
     });
 
+    // 🔥 Fatigue decay
+    let currentFatigue = userData.currentFatigueScore || 0;
+
+    if (recoveryIndex >= 70) {
+      currentFatigue = Math.max(0, currentFatigue - 5);
+    }
+
     const loadMultiplier = getLoadMultiplier(recoveryIndex);
 
     const today = new Date().toISOString().split("T")[0];
 
     // Store daily log
-    await db
-      .collection("users")
-      .doc(uid)
+    await userRef
       .collection("dailyLogs")
       .doc(today)
       .set({
@@ -50,9 +64,7 @@ exports.dailyCheckin = async (req, res) => {
       });
 
     // Fetch today's workout
-    const workoutRef = db
-      .collection("users")
-      .doc(uid)
+    const workoutRef = userRef
       .collection("workoutPlans")
       .doc(today);
 
@@ -71,16 +83,28 @@ exports.dailyCheckin = async (req, res) => {
 
     await workoutRef.set(updatedWorkout);
 
-    // Update user recovery state
-    await db.collection("users").doc(uid).update({
+    // Update user state
+    await userRef.update({
       currentRecoveryIndex: recoveryIndex,
-      currentLoadMultiplier: loadMultiplier
+      currentLoadMultiplier: loadMultiplier,
+      currentFatigueScore: currentFatigue
     });
+
+    // 🔥 Smart warning
+    let warning = null;
+
+    if (
+      userData.workoutDaysPerWeek > 4 &&
+      recoveryIndex < 50
+    ) {
+      warning = "Recovery low. Consider rest day.";
+    }
 
     return res.json({
       recoveryIndex,
       loadMultiplier,
-      updatedWorkoutPlan: updatedWorkout
+      updatedWorkoutPlan: updatedWorkout,
+      warning
     });
 
   } catch (err) {
@@ -108,6 +132,9 @@ exports.completeWorkout = async (req, res) => {
 
     const userRef = db.collection("users").doc(uid);
     const userSnap = await userRef.get();
+    if (!userSnap.exists) {
+      return res.status(404).json({ error: "User not found" });
+    }
     const userData = userSnap.data();
 
     // 1️⃣ Store workoutLogs

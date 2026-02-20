@@ -18,6 +18,14 @@ app.get("/", (req, res) => {
   res.send("Backend running successfully");
 });
 
+// User routes
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/user", userRoutes);
+
+// Workout routes
+const workoutRoutes = require("./routes/workoutRoutes");
+app.use("/api/workout", workoutRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
 

@@ -38,6 +38,10 @@ app.use("/api/character", characterRoutes);
 const wellnessRoutes = require("./routes/wellnessRoutes");
 app.use("/api/wellness", wellnessRoutes);
 
+// Community routes
+const communityRoutes = require("./routes/communityRoutes");
+app.use("/api/community", communityRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
 

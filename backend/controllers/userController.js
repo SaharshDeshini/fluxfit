@@ -74,3 +74,100 @@ exports.onboarding = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+exports.updateProfile = async (req, res) => {
+  try {
+    const uid = req.user.uid;
+    const updates = req.body;
+
+    const userRef = db.collection("users").doc(uid);
+    const userSnap = await userRef.get();
+    const userData = userSnap.data();
+
+    if (!userSnap.exists) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    let regenerateWorkout = false;
+    let regenerateDiet = false;
+
+    // Detect important changes
+    if (updates.weight && updates.weight !== userData.weight) {
+      regenerateDiet = true;
+    }
+
+    if (
+      updates.workoutDaysPerWeek &&
+      updates.workoutDaysPerWeek !== userData.workoutDaysPerWeek
+    ) {
+      regenerateWorkout = true;
+    }
+
+    if (
+      updates.dietPreference &&
+      updates.dietPreference !== userData.dietPreference
+    ) {
+      regenerateDiet = true;
+    }
+
+    // Update profile fields
+    await userRef.update(updates);
+
+    let newWorkoutPlan = null;
+    let newDietPlan = null;
+
+    // 🔥 Regenerate diet if needed
+    if (regenerateDiet) {
+      const updatedUser = { ...userData, ...updates };
+
+      const bmr = calculateBMR(updatedUser);
+      const calorieTarget = calculateCalorieTarget(bmr, updatedUser.goal);
+      const macros = calculateMacros(
+        calorieTarget,
+        updatedUser.weight,
+        updatedUser.goal
+      );
+
+      newDietPlan = generateDietPlan({
+        calorieTarget,
+        ...macros
+      });
+
+      await userRef
+        .collection("diet")
+        .doc("basePlan")
+        .set(newDietPlan);
+
+      await userRef
+        .collection("diet")
+        .doc("activePlan")
+        .set(newDietPlan);
+    }
+
+    // 🔥 Regenerate workout if needed
+    if (regenerateWorkout) {
+      const updatedUser = { ...userData, ...updates };
+
+      newWorkoutPlan = generateWorkoutPlan(updatedUser);
+
+      const today = new Date().toISOString().split("T")[0];
+
+      await userRef
+        .collection("workoutPlans")
+        .doc(today)
+        .set(newWorkoutPlan);
+    }
+
+    return res.json({
+      success: true,
+      workoutRegenerated: regenerateWorkout,
+      dietRegenerated: regenerateDiet
+    });
+
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      error: "Internal server error"
+    });
+  }
+};

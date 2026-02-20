@@ -1,0 +1,6 @@
+{
+  "breakfast": ["Oats", "Eggs", "Upma"],
+  "lunch": ["Rice & Dal", "Rice & Chicken", "Paneer Curry"],
+  "dinner": ["Roti & Sabzi", "Grilled Chicken", "Paneer & Salad"],
+  "snacks": ["Nuts", "Protein Shake", "Fruits"]
+}

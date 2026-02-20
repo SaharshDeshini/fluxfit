@@ -1,29 +1,24 @@
-const { admin, db } = require("../config/firebase");
+const { db } = require("../config/firebase");
 
 exports.verifyUser = async (req, res) => {
-  const { token } = req.body;
-
   try {
-    // 1️⃣ Verify Firebase token
-    const decodedToken = await admin.auth().verifyIdToken(token);
-
-    const uid = decodedToken.uid;
-    const email = decodedToken.email;
-    const name = decodedToken.name || "";
+    // 🔥 Token already verified by middleware
+    const uid = req.user.uid;
+    const email = req.user.email || "";
+    const name = req.user.name || "";
 
     const userRef = db.collection("users").doc(uid);
     const userDoc = await userRef.get();
 
-    // 2️⃣ Check if user exists
     if (userDoc.exists) {
       return res.json({
         success: true,
         isNewUser: false,
-        redirectTo: "dashboard",
+        redirectTo: "dashboard"
       });
     }
 
-    // 3️⃣ If not exists → create basic record
+    // Create new user record
     await userRef.set({
       email,
       name,
@@ -34,14 +29,14 @@ exports.verifyUser = async (req, res) => {
     return res.json({
       success: true,
       isNewUser: true,
-      redirectTo: "questionnaire",
+      redirectTo: "questionnaire"
     });
 
   } catch (error) {
-  console.log("VERIFY ERROR:", error);
-  res.status(401).json({
-    success: false,
-    message: error.message
-  });
+    console.error("VERIFY CONTROLLER ERROR:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message
+    });
   }
 };

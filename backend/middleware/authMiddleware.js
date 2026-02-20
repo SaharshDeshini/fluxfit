@@ -1,4 +1,4 @@
-const { admin } = require("../config/firebase");
+const admin = require("../config/firebase");
 
 const verifyToken = async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -20,8 +20,8 @@ const verifyToken = async (req, res, next) => {
 
     next(); // move to next function
   } catch (error) {
-    return res.status(401).json({ message: "Invalid or expired token" });
     console.error("VERIFY ERROR:", error);
+    return res.status(401).json({ message: "Invalid or expired token" });
   }
 };
 

@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.signup-container {
+  min-height: 100vh;
+  background: #111; /* background outside phone */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* This becomes your phone */
+.signup-box {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a0d05 0%, #000 70%);
+  padding: 40px 25px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  background: #ff6a00;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ---------- Heading ---------- */
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.orange {
+  color: #ff6a00;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 35px;
+  font-size: 15px;
+}
+
+/* ---------- Labels ---------- */
+
+label {
+  font-size: 14px;
+  margin-top: 20px;
+  display: block;
+  color: #ddd;
+}
+
+/* ---------- Input ---------- */
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border-radius: 40px;
+  padding: 15px 20px;
+  margin-top: 10px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.input-group:focus-within {
+  border-color: #ff6a00;
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.icon {
+  color: #777;
+}
+
+.eye-icon {
+  cursor: pointer;
+  color: #777;
+}
+
+/* ---------- Strength Bar ---------- */
+
+.strength-bar {
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  background: #ff6a00;
+  transition: width 0.3s ease;
+}
+
+.password-info {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* ---------- Button ---------- */
+
+.signup-btn {
+  width: 100%;
+  background: #ff6a00;
+  color: white;
+  padding: 17px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.5);
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #ff7f24;
+  transform: translateY(-2px);
+}
+
+/* ---------- Divider ---------- */
+
+.divider {
+  text-align: center;
+  margin: 35px 0;
+  color: #777;
+}
+
+/* ---------- Google Button ---------- */
+
+.google-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #333;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.google-btn:hover {
+  border-color: #ff6a00;
+}
+
+/* ---------- Signin ---------- */
+
+.signin-text {
+  text-align: center;
+  margin-top: 25px;
+  color: #aaa;
+}
+
+.signin-text span {
+  color: #ff6a00;
+  cursor: pointer;
+}

@@ -1,0 +1,162 @@
+.community-wrapper {
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  width: 390px;
+  height: 844px;
+  background: #000;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: white;
+}
+
+/* HEADER */
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-icon {
+  color: #ff6a00;
+}
+
+/* SHARE BOX */
+.share-box {
+  margin-top: 20px;
+  background: #111;
+  padding: 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.share-box input {
+  flex: 1;
+  background: #1a1a1a;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+}
+
+.image-btn {
+  background: #ff6a00;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* FEATURED */
+.featured-card {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #331400, #ff6a00);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.featured-card .tag {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.join-btn {
+  margin-top: 10px;
+  background: #ff6a00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* POSTS */
+.post {
+  margin-top: 25px;
+}
+
+.post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post-header span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.post-actions {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-actions div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.hashtags {
+  margin-top: 5px;
+  color: #ff6a00;
+  font-size: 13px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.active-nav {
+  color: #ff6a00 !important;
+}

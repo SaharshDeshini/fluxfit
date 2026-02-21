@@ -1,0 +1,253 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Center on Desktop */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MOBILE SCREEN */
+.wellness-container {
+  width: 390px;
+  height: 844px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 32px;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* Hide scrollbar */
+.wellness-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* HEADER */
+.wellness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wellness-header h2 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* TIMER */
+.circle-wrapper {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #222;
+  stroke-width: 8;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: #ff6a00;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 722;
+  stroke-dashoffset: calc(722 - (722 * var(--progress)) / 100);
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text {
+  position: absolute;
+  text-align: center;
+}
+
+.timer-text h1 {
+  font-size: 46px;
+  font-weight: 300;
+}
+
+.timer-text p {
+  color: #ff6a00;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+/* TIME OPTIONS */
+.time-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.time-btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #222;
+  background: #111;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.time-btn.active {
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+}
+
+/* START BUTTON */
+.start-btn {
+  margin-top: 30px;
+  padding: 16px;
+  border-radius: 30px;
+  border: none;
+  background: #ff6a00;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* LIBRARY */
+.library-title {
+  margin-top: 30px;
+  color: #555;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.library-card {
+  margin-top: 15px;
+  background: #111;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.library-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.library-info {
+  flex: 1;
+}
+
+.library-info p {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #333;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+.progress-inner {
+  width: 40%;
+  height: 100%;
+  background: #ff6a00;
+  border-radius: 5px;
+}
+
+.heart-icon {
+  color: #ff6a00;
+  cursor: pointer;
+}
+
+/* CONTROLS */
+.controls {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.main-control {
+  background: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+/* BOTTOM NAV */
+/* ================= FIXED BOTTOM NAV ================= */
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 110;
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid #222;
+  z-index: 10;
+}
+
+/* Nav Buttons */
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #777;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Active */
+.active-nav {
+  color: #ff6a00 !important;
+}

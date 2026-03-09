@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6a00",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#000000",
+                        "surface-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .custom-radio:checked + label {
+            border-color: #ff6a00;
+            background-color: rgba(255, 106, 0, 0.1);
+        }
+        .custom-radio:checked + label .radio-dot {
+            background-color: #ff6a00;
+            border-color: #ff6a00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header / Progress Section -->
+<header class="w-full p-6 pt-8">
+<div class="flex items-center justify-between mb-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-white/10 text-white">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</button>
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Step 2 of 4</span>
+<span class="text-primary text-sm font-bold">Goal Setting</span>
+</div>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 50%;"></div>
+</div>
+</header>
+<main class="flex-1 px-6 pb-24">
+<!-- Title Section -->
+<div class="mb-8">
+<h1 class="text-4xl font-bold tracking-tight text-slate-100 mb-2">What's your goal?</h1>
+<p class="text-slate-400 text-lg">Choose the path that fits your journey.</p>
+</div>
+<!-- Goal Selection Cards -->
+<div class="grid grid-cols-1 gap-4 mb-10">
+<!-- Goal Card 1 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-primary/50 transition-all duration-300">
+<input checked="" class="hidden peer" id="goal-weight-loss" name="goal" type="radio"/>
+<label class="block relative aspect-[21/9] w-full peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20" for="goal-weight-loss">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A focused person running on a treadmill in a dark gym" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDje1_I0CCQUGcn49VgzpX2cnN6S16zj589ojyg6llGk5Ouwd2AmnvIhQ9p4TXPAFlbd9rxYN0PaK1IKOxeDPco9VSbXeCLr2GBLZghlFOAVnPAA5wolFpIgABDHru2CkcELCr9Pt1jba-YFgOjo_wMfpLpqmGuU8R9bvaezfp1hBraifc8XRzU6kDlFPhTvFQZy_pwQV1I7DlMHH9UC0FuOzrVFj1Gmp0AzLHH7aiaJ_DA3qY6D2y-jRZKZQPp8G6mZkatc6iDMr8')">
+</div>
+<div class="absolute inset-0 p-6 flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-white mb-1">Weight Loss</h3>
+<p class="text-white/70 text-sm">Burn calories and get lean</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
+<div class="bg-primary text-black rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Goal Card 2 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-primary/50 transition-all duration-300">
+<input class="hidden peer" id="goal-muscle" name="goal" type="radio"/>
+<label class="block relative aspect-[21/9] w-full peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20" for="goal-muscle">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Person lifting heavy dumbbells in a moody gym setting" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1gMQNytmASxCoyxdMmBnh3d53vD3OQE-WMy0AAVtctFU-yxfBhDCT4l9bsQWp60mRS21qi95c1Kw4uGOxEZi8_F1zgt38ObILemfUYtrTioVcqttIU2j9jROLXYSCYn-jTnwWYU9xF9qB9Q8ZKlZrX41aDf2JraeMSEZku67IlXgj3T-Sem-FZqgnOK0OW7hPgi1Um0ia70jrkrTJFlLW9Y7rK5oOc8_AKE7NA0LbzeHdNkQsq8Qzp1vM7aDEqmLj-x5GCYB_5Z4')">
+</div>
+<div class="absolute inset-0 p-6 flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-white mb-1">Muscle Build</h3>
+<p class="text-white/70 text-sm">Gain strength and mass</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
+<div class="bg-primary text-black rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Goal Card 3 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-primary/50 transition-all duration-300">
+<input class="hidden peer" id="goal-fit" name="goal" type="radio"/>
+<label class="block relative aspect-[21/9] w-full peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20" for="goal-fit">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Person practicing yoga in a serene dark studio" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIS_WrxVLtDCGr_EsiDIARLgaZ9mgbEcD8AWidJgNcPU3w0qG7vz0WcqDis9eyqoscifjwVwy9HWI_aQj25qx8GqN0gfeAX7XTQfUWLexLWKsJOhLQsj1iJ73UA57BFGxKbhdOYIHYWXQsBHxxw8kgBM8hUaX_crR0fM0rfaUz0Nvx77S9jpv3-7enHe7Be-BMzjH2S9V9VVdtEtjtPxoXs6gXis1nfVZyXmu1GKBAWZBqpKb5uK8a2ukhQ1qg3BfBqWMIJOLH1_A')">
+</div>
+<div class="absolute inset-0 p-6 flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-white mb-1">Stay Fit</h3>
+<p class="text-white/70 text-sm">Maintain health and flexibility</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
+<div class="bg-primary text-black rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Experience Level Section -->
+<div class="mb-10">
+<h3 class="text-xl font-bold text-slate-100 mb-4">Select your level</h3>
+<div class="flex flex-col gap-3">
+<!-- Level 1 -->
+<div class="relative">
+<input checked="" class="hidden peer" id="level-beginner" name="level" type="radio"/>
+<label class="flex items-center justify-between p-4 bg-surface-dark border border-white/10 rounded-xl cursor-pointer peer-checked:border-primary peer-checked:bg-primary/5 transition-all" for="level-beginner">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<p class="font-bold text-slate-100">Beginner</p>
+<p class="text-xs text-slate-400">New to fitness training</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary radio-dot">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 peer-checked:scale-100 transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Level 2 -->
+<div class="relative">
+<input class="hidden peer" id="level-intermediate" name="level" type="radio"/>
+<label class="flex items-center justify-between p-4 bg-surface-dark border border-white/10 rounded-xl cursor-pointer peer-checked:border-primary peer-checked:bg-primary/5 transition-all" for="level-intermediate">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">exercise</span>
+</div>
+<div>
+<p class="font-bold text-slate-100">Intermediate</p>
+<p class="text-xs text-slate-400">Regular workout habit</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white/20 flex items-center justify-center">
+<!-- Visual mock for the peer-checked state since we can't use complex logic -->
+</div>
+</label>
+</div>
+<!-- Level 3 -->
+<div class="relative">
+<input class="hidden peer" id="level-pro" name="level" type="radio"/>
+<label class="flex items-center justify-between p-4 bg-surface-dark border border-white/10 rounded-xl cursor-pointer peer-checked:border-primary peer-checked:bg-primary/5 transition-all" for="level-pro">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trophy</span>
+</div>
+<div>
+<p class="font-bold text-slate-100">Pro</p>
+<p class="text-xs text-slate-400">Advanced athlete</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white/20 flex items-center justify-center">
+</div>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<footer class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent pt-12">
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2">
+            Continue
+            <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</footer>
+</body></html>

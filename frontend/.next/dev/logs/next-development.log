@@ -1,0 +1,7 @@
+[00:22:42.965] Server  LOG       Reload env: .env
+[03:07:40.180] Server  LOG       Reload env: .env
+[11:01:36.809] Server  LOG       Reload env: .env
+[11:05:11.566] Server  LOG       Reload env: .env
+[11:05:15.808] Server  ERROR   Error: EPIPE: broken pipe, write
+[11:05:16.265] Server  ERROR   ⨯ "uncaughtException:" Error: EPIPE: broken pipe, write
+[11:05:16.792] Server  ERROR   ⨯ "uncaughtException: " Error: EPIPE: broken pipe, write

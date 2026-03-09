@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fitness Dashboard | Premium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6a00",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(35, 23, 15, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
+            border: 1px solid rgba(255, 106, 0, 0.1);
+        }
+        .ring-gradient {
+            background: conic-gradient(from 0deg, #ff6a00 var(--percentage), #23170f var(--percentage));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-6 pt-8">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="size-14 rounded-full border-2 border-primary p-0.5">
+<img alt="User Profile" class="size-full rounded-full object-cover" data-alt="Close up portrait of a fit athlete smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrA2T1IIwTJ8nzfyLeD71H1FghF-LznKZK17FnWxNsJoVup6KR9rGuvKQtRI0g3BvtqFzdLS5dYg1zeJ8nnCf78FvOUna5qrqdPB6aC1DShChCpyIZaIYAjdVb7oHWpS2p01i8YMdTzkCTnBPo0VPS0WK-9ULL4BFweaX1hhgaft-ncxGEGrdJc7x8BThHhxDzWGZroLcPZxeUj-rIX1NUuHUYssngmpV9JLlhWad5pAbm4G0FGnFDmKSGCnx0U-TY__9lo_llSE"/>
+</div>
+<div class="absolute bottom-0 right-0 size-4 bg-green-500 border-2 border-black rounded-full"></div>
+</div>
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-widest">Good Morning</p>
+<h1 class="text-2xl font-bold tracking-tight">Alex Rivera</h1>
+</div>
+</div>
+<button class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="flex-1 px-6 pb-24 space-y-8">
+<!-- Continue Workout Card -->
+<section>
+<div class="glass-card rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 opacity-20 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Blurred background of a modern gym interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7IdSIqp2NDCZUEFY3VARHthHk1ZRd-u50YVbGr_ogd9eYZ-Wjgmg4IIOt848IOwle8gdGs1bgVJXfISrnGubPRr8U7HSDwmsQYxV7l308ugCElAguWAkltA0OnO-SScuCcCAJnAs3DmQYE7tQP2I7QHy9PuxO3i_hYomZN8raJTpES7ShgZCQFEFmoJSZaaqrJTpfnkCr1SsaHrHg8tGOzHn3ltHGVJTgXTWiFUrU1fiUlkWX2IwkU-D1nwv0kmEAquojr_UkxPs')"></div>
+<div class="relative p-6 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/30">Active Session</span>
+<h2 class="text-2xl font-bold mt-3">Heavy Leg Day</h2>
+<p class="text-slate-400 text-sm">Session started 45m ago</p>
+</div>
+<div class="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/5">
+<span class="text-primary font-bold text-xl">45%</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium text-slate-400">
+<span>In Progress</span>
+<span>8 of 14 sets</span>
+</div>
+<div class="h-3 w-full bg-primary/10 rounded-full overflow-hidden border border-white/5">
+<div class="h-full bg-gradient-to-r from-primary to-orange-400 rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">play_arrow</span>
+                        RESUME WORKOUT
+                    </button>
+</div>
+</div>
+</section>
+<!-- Workout Analytics -->
+<section class="space-y-4">
+<div class="flex items-end justify-between">
+<h2 class="text-xl font-bold tracking-tight">Workout Analytics</h2>
+<button class="text-primary text-sm font-medium">View detailed report</button>
+</div>
+<div class="glass-card rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Simple Bar Chart Placeholder -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase">Weekly Volume</p>
+<p class="text-2xl font-bold">42,500 <span class="text-sm font-normal text-slate-500">kg</span></p>
+</div>
+<div class="text-green-400 text-sm flex items-center font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                            12%
+                        </div>
+</div>
+<div class="flex items-end justify-between h-24 gap-2">
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[80%] border-t-2 border-primary"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-sm h-[10%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-slate-500 font-bold">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary mb-2">local_fire_department</span>
+<p class="text-slate-400 text-[10px] font-bold uppercase">Calories</p>
+<p class="text-lg font-bold">1,240</p>
+</div>
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary mb-2">timer</span>
+<p class="text-slate-400 text-[10px] font-bold uppercase">Duration</p>
+<p class="text-lg font-bold">5.2h</p>
+</div>
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary mb-2">fitness_center</span>
+<p class="text-slate-400 text-[10px] font-bold uppercase">Avg HR</p>
+<p class="text-lg font-bold">142</p>
+</div>
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary mb-2">calendar_today</span>
+<p class="text-slate-400 text-[10px] font-bold uppercase">Streak</p>
+<p class="text-lg font-bold">14d</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nutrition Quick View -->
+<section class="space-y-4">
+<h2 class="text-xl font-bold tracking-tight">Today's Nutrition</h2>
+<div class="glass-card rounded-xl p-6 flex flex-col md:flex-row gap-8">
+<!-- Macro Progress -->
+<div class="flex justify-between flex-1">
+<div class="flex flex-col items-center gap-2">
+<div class="size-16 rounded-full border-4 border-primary/20 flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-4 border-primary border-t-transparent -rotate-45"></div>
+<span class="text-xs font-bold">65%</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Protein</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-16 rounded-full border-4 border-primary/20 flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-4 border-primary border-r-transparent rotate-90"></div>
+<span class="text-xs font-bold">40%</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Carbs</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-16 rounded-full border-4 border-primary/20 flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-4 border-primary border-l-transparent border-b-transparent"></div>
+<span class="text-xs font-bold">25%</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Fats</span>
+</div>
+</div>
+<!-- Next Meal -->
+<div class="flex-1 bg-primary/5 rounded-xl p-4 flex gap-4 border border-primary/10">
+<img alt="Meal Preview" class="size-16 rounded-lg object-cover" data-alt="Gourmet grilled salmon with quinoa and greens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0oaEvRZtqfBhlyaEsSOZiSIVeOATvVoL3AWJC0uA8MwrSpfw2GLTVQiSB2zyAfMNNfP3QNZW8l5zGbMwrs7eq3ZRMwfY6MP6zQ6X2fv3PAAqT_pW2YHBL2YhORrXnl3trMMi4Mi7YIVw1HlV2KKL3Ud2cb8DHYshiXaAeLDENnIWN2DdVppRnQ1ua8bMvgaGnM3SOKO6gOk81l00Yay5iED44PQvskiJWVAHVaiK5dmPxwgPq73m5bhajcGWeawHcJjZ9v8qmrXg"/>
+<div class="flex flex-col justify-center">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Next Meal • 6:00 PM</p>
+<h3 class="font-bold text-sm">Grilled Salmon &amp; Quinoa</h3>
+<p class="text-slate-400 text-xs mt-1">540 kcal | 42g Protein</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-xl border-t border-white/5 px-4 pb-6 pt-3 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] font-variation-fill">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">exercise</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Training</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">restaurant</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Nutrition</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

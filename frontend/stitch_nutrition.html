@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FluxFit Nutrition Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6a00",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(255, 106, 0, 0.3);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-6 sticky top-0 bg-background-dark/80 backdrop-blur-md z-50">
+<div class="flex flex-col">
+<span class="text-primary text-xs font-bold tracking-widest uppercase mb-1">FitAI Premium</span>
+<h1 class="text-2xl font-bold leading-tight tracking-tight">Nutrition Dashboard</h1>
+</div>
+<div class="relative group">
+<div class="size-12 rounded-full border-2 border-primary p-0.5 overflow-hidden orange-glow">
+<img alt="Profile" class="w-full h-full object-cover rounded-full" data-alt="Close up portrait of a fit man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_OK9L_Qn8xYLywmYpdaQy81SYm4VIVU1UOC4Y31SyMwCHtVixNg_5GU41SphT9PoKKH0pvL7AsDKA8sjRt63Enk_ZqzZNjKw_c14PGxaYZG9-n1BC1bS3WVaekhJ-VhrMbQ4jfIQMjeuHwYJV5Sd1pz9LpRok7qdvWFAA2nSBXTtRowSbcgBjgtYfWzVEU-lhOmVtms4CFUaWfXXMBrEkhE5a-iXRcTRm6YMxdAHHqJ0mcYLHtwvCKXu8KTkRXfzkjy5Mvhm8u1c"/>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="px-6 space-y-8">
+<!-- Circular Progress Chart -->
+<section class="flex flex-col items-center justify-center py-4">
+<div class="relative size-64 flex items-center justify-center">
+<!-- SVG Circle Background -->
+<svg class="size-full transform -rotate-90">
+<circle class="text-slate-800" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-width="12"></circle>
+<circle cx="128" cy="128" fill="transparent" r="110" stroke="url(#orange_gradient)" stroke-dasharray="691" stroke-dashoffset="250" stroke-linecap="round" stroke-width="12"></circle>
+<defs>
+<lineargradient id="orange_gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ff6a00"></stop>
+<stop offset="100%" stop-color="#ff9d00"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Text Center -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-slate-400 text-sm font-medium">Kcal Left</span>
+<span class="text-5xl font-bold text-white tracking-tighter">1,240</span>
+<div class="mt-1 flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="text-xs font-bold uppercase tracking-wider">Goal: 2,500</span>
+</div>
+</div>
+</div>
+<!-- Macro Goals Progress Bars -->
+<div class="w-full grid grid-cols-3 gap-4 mt-8">
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-xs text-slate-400 font-medium">Protein</span>
+<span class="text-xs text-slate-100 font-bold">120g</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 66%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-xs text-slate-400 font-medium">Carbs</span>
+<span class="text-xs text-slate-100 font-bold">200g</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-xs text-slate-400 font-medium">Fats</span>
+<span class="text-xs text-slate-100 font-bold">45g</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-yellow-500 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customize Plan CTA -->
+<button class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-primary to-orange-500 text-white font-bold flex items-center justify-center gap-2 orange-glow active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">auto_awesome</span>
+            Customize Plan with FluxFit
+        </button>
+<!-- Meal Plan Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold">Today's Meal Plan</h2>
+<button class="text-primary text-sm font-semibold flex items-center gap-1">
+                    See All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Tabs -->
+<!-- Food Item Cards -->
+<div class="space-y-4">
+<!-- Breakfast Item 1 -->
+<div class="glass-card rounded-xl overflow-hidden flex p-3 gap-4 group">
+<div class="w-24 h-24 shrink-0 rounded-lg overflow-hidden">
+<img alt="Avocado Toast" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Gourmet avocado toast with poached egg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIZyHqk_saZjwDLEQapWG77mwUOVRT46CgL22Iu6RyAh3zeFXcXgI-0Xo_swYB6uF2UlxTB2Usk0XP7OzK_WvQ8wHBiCs_Kgwf-rVaHlt5QGQ0y_CHmoNGxOA5S7ljP_PbZ33gf1NULQBTjmgtzjQXw1xdrLFdnYZ-kQ5QtnOBwmkqs9hU70jlIJlAqUjTiPcTrGHl1FVhkaP8EO4fHD9_5h9kcS6K74iXmwjO1_kJvF4JzSfZF-Zsg_LhTEdtRJpLUwPQZ1EJqCQ"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h3 class="text-base font-bold text-white mb-0.5">Sourdough Avocado Toast</h3>
+<div class="flex items-center gap-3 text-xs text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_fire_department</span> 450 kcal</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> 12 min</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex gap-2 text-[10px] font-bold uppercase tracking-tight">
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary">P: 12g</span>
+<span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">C: 45g</span>
+<span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400">F: 22g</span>
+</div>
+<button class="size-8 rounded-full bg-primary flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Breakfast Item 2 -->
+<div class="glass-card rounded-xl overflow-hidden flex p-3 gap-4 group">
+<div class="w-24 h-24 shrink-0 rounded-lg overflow-hidden">
+<img alt="Greek Yogurt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Bowl of Greek yogurt with berries and honey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDsSMYbyZlZ2P6nI5xsrzsJGQMs20tJX4OqOwXrL3D9zFpmuQbiTbZn8FW0vL-y29vj0GlNYGAeWg1hsKw0Tlx-kpxfaD3OuQsVxlXq-XB5B_hhzEofL7JfdLMFFvAwL0eRpyyxRJDlq3iTAO06jhuIiFaVHaT3L7w_2AWfUT9QjaTimtX2NoS2fB_8txC22E7YvhPqVB74O6jX2nGKsfdZV3Y3XEnGuowKpKriuomjiNLk5yFOpfzj5NyrQojZoTkR5KUvJHtNg4"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h3 class="text-base font-bold text-white mb-0.5">Berry Protein Bowl</h3>
+<div class="flex items-center gap-3 text-xs text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_fire_department</span> 320 kcal</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> 5 min</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex gap-2 text-[10px] font-bold uppercase tracking-tight">
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary">P: 28g</span>
+<span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">C: 22g</span>
+<span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400">F: 6g</span>
+</div>
+<button class="size-8 rounded-full bg-primary flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<div class="fixed bottom-24 left-0 right-0 px-6 z-40">
+<div class="rounded-2xl flex items-center px-4 py-3 gap-3 orange-glow bg-zinc-900" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-white w-full placeholder:text-slate-500 font-medium" placeholder="Search foods or ask FitAI..." type="text"/>
+<button class="text-primary">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div><nav class="fixed bottom-0 left-0 right-0 z-[100] bg-background-dark/90 backdrop-blur-xl border-t border-white/5 px-6 pt-2 pb-6 flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">fitness_center</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Training</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary relative" href="#">
+<span class="material-symbols-outlined text-[28px] fill-current">nutrition</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Nutrition</span>
+<div class="absolute -bottom-2 w-1.5 h-1.5 bg-primary rounded-full"></div>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

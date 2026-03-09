@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Step 3: Commitment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6a00",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #ff6a00;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #1a1a1a;
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.6);
+        }
+        .slider-thumb::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #ff6a00;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #1a1a1a;
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<!-- Top App Bar & Progress -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4">
+<div class="flex items-center justify-between mb-4">
+<button class="flex items-center justify-center size-10 rounded-full bg-slate-200 dark:bg-primary/10 text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight">Step 3 of 3</h2>
+<div class="size-10"></div> <!-- Placeholder for balance -->
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-medium text-primary uppercase tracking-widest">Finalizing Plan</span>
+<span class="text-xs opacity-60">100%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-primary/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(255,106,0,0.5)]" style="width: 100%;"></div>
+</div>
+</div>
+</header>
+<main class="px-5 py-6 max-w-md mx-auto space-y-8">
+<!-- Header Text -->
+<section>
+<h1 class="text-3xl font-bold leading-tight mb-2">Onboarding Step 3: <span class="text-primary">Commitment</span></h1>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Fine-tune your training preferences to build your custom plan.</p>
+</section>
+<!-- Frequency Selection -->
+<section class="space-y-4">
+<h3 class="text-lg font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                How many days per week?
+            </h3>
+<div class="flex justify-between gap-2">
+<!-- Day Cards -->
+<button class="flex-1 aspect-square flex flex-col items-center justify-center rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 transition-all hover:border-primary">
+<span class="text-2xl font-bold">1</span>
+</button>
+<button class="flex-1 aspect-square flex flex-col items-center justify-center rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 transition-all hover:border-primary">
+<span class="text-2xl font-bold">2</span>
+</button>
+<button class="flex-1 aspect-square flex flex-col items-center justify-center rounded-xl border-2 border-primary bg-primary/10 shadow-[0_0_15px_rgba(255,106,0,0.2)]">
+<span class="text-2xl font-bold text-primary">3</span>
+</button>
+<button class="flex-1 aspect-square flex flex-col items-center justify-center rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 transition-all hover:border-primary">
+<span class="text-2xl font-bold">4</span>
+</button>
+<button class="flex-1 aspect-square flex flex-col items-center justify-center rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 transition-all hover:border-primary">
+<span class="text-2xl font-bold">5</span>
+</button>
+</div>
+</section>
+<!-- Duration Slider -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timer</span>
+                    Max workout duration
+                </h3>
+<span class="text-2xl font-bold text-primary">45 <span class="text-sm font-normal text-slate-400">min</span></span>
+</div>
+<div class="relative pt-2">
+<input class="w-full h-2 bg-slate-200 dark:bg-primary/20 rounded-lg appearance-none cursor-pointer slider-thumb" max="90" min="15" step="5" type="range" value="45"/>
+<div class="flex justify-between mt-4 text-xs font-medium text-slate-500 uppercase tracking-tighter">
+<span>15 min</span>
+<span>45 min</span>
+<span>90 min</span>
+</div>
+</div>
+</section>
+<!-- Target Muscle Groups -->
+<section class="space-y-4">
+<h3 class="text-lg font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+                Target Muscle Groups
+            </h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center gap-3 p-4 rounded-xl border-2 border-primary bg-primary/10 shadow-[0_0_15px_rgba(255,106,0,0.1)]">
+<span class="material-symbols-outlined text-primary">accessibility_new</span>
+<span class="font-medium">Full Body</span>
+</button>
+<button class="flex items-center gap-3 p-4 rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary/60">person</span>
+<span class="font-medium">Upper Body</span>
+</button>
+<button class="flex items-center gap-3 p-4 rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary/60">downhill_skiing</span>
+<span class="font-medium">Lower Body</span>
+</button>
+<button class="flex items-center gap-3 p-4 rounded-xl border-2 border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary/60">grid_view</span>
+<span class="font-medium">Core &amp; Abs</span>
+</button>
+</div>
+</section>
+<!-- Gym Access Toggle -->
+<section class="flex items-center justify-between p-5 rounded-xl bg-slate-100 dark:bg-primary/5 border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<div>
+<h4 class="font-bold">Gym Access</h4>
+<p class="text-xs text-slate-500">Includes machines and weights</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-slate-300 dark:bg-primary/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-6 after:transition-all peer-checked:bg-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]"></div>
+</label>
+</section>
+<!-- Intensity Indicator -->
+<div class="flex items-center gap-3 justify-center py-2 opacity-80">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500">Plan Intensity:</span>
+<div class="flex gap-1">
+<div class="w-4 h-1.5 rounded-full bg-primary"></div>
+<div class="w-4 h-1.5 rounded-full bg-primary"></div>
+<div class="w-4 h-1.5 rounded-full bg-primary"></div>
+<div class="w-4 h-1.5 rounded-full bg-slate-300 dark:bg-primary/20"></div>
+<div class="w-4 h-1.5 rounded-full bg-slate-300 dark:bg-primary/20"></div>
+</div>
+<span class="text-xs font-bold text-primary">Moderate</span>
+</div>
+<!-- Action Button -->
+<footer class="pt-4 pb-10">
+<button class="w-full py-5 bg-primary text-white font-bold rounded-xl shadow-[0_10px_30px_rgba(255,106,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all text-lg flex items-center justify-center gap-2">
+                Generate My Custom Plan
+                <span class="material-symbols-outlined">bolt</span>
+</button>
+<p class="text-center text-xs text-slate-500 mt-4">You can change these settings later in your profile.</p>
+</footer>
+</main>
+</body></html>
